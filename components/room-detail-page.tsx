@@ -18,12 +18,18 @@ export const RoomDetailPage = () => {
     activePhoto,
     currentPhotoIndex,
     selectedGuests,
+    checkInDate,
+    checkOutDate,
+    selectedNights,
+    totalPrice,
     minGuests,
     maxGuests,
     previousPhoto,
     nextPhoto,
     decreaseGuests,
     increaseGuests,
+    updateCheckInDate,
+    updateCheckOutDate,
   } = useRoomDetailState(roomId);
 
   if (isLoading) {
@@ -50,10 +56,16 @@ export const RoomDetailPage = () => {
         <RoomInfoSection
           room={room}
           selectedGuests={selectedGuests}
+          checkInDate={checkInDate}
+          checkOutDate={checkOutDate}
+          selectedNights={selectedNights}
+          totalPrice={totalPrice}
           minGuests={minGuests}
           maxGuests={maxGuests}
           onDecreaseGuests={decreaseGuests}
           onIncreaseGuests={increaseGuests}
+          onUpdateCheckInDate={updateCheckInDate}
+          onUpdateCheckOutDate={updateCheckOutDate}
         />
       </article>
     </main>

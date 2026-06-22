@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import type { ListingCardData } from "@/types/home";
 
 function StarIcon({ filled }: { filled: boolean }) {
@@ -35,34 +37,40 @@ interface ListingCardProps {
 
 export function ListingCard({ listing }: ListingCardProps) {
   return (
-    <article className="overflow-hidden rounded-[28px] bg-white shadow-[0_12px_40px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)]">
-      <div
-        className="relative flex aspect-[4/3] items-end justify-between bg-[linear-gradient(135deg,#ffe7ec_0%,#ffd3c6_45%,#f5f5f4_100%)] bg-cover bg-center p-5"
-        style={{ backgroundImage: `linear-gradient(135deg, rgba(255,231,236,0.8) 0%, rgba(255,211,198,0.75) 45%, rgba(245,245,244,0.65) 100%), url(${listing.imageUrl})` }}
-      >
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">Foto referencial</p>
-          <p className="mt-2 max-w-40 text-sm text-zinc-800">{listing.location}</p>
+    <Link
+      href={`/rooms/${listing.id}`}
+      className="block rounded-[28px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff385c] focus-visible:ring-offset-2"
+      aria-label={`Ver detalle de ${listing.title}`}
+    >
+      <article className="overflow-hidden rounded-[28px] bg-white shadow-[0_12px_40px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)]">
+        <div
+          className="relative flex aspect-[4/3] items-end justify-between bg-[linear-gradient(135deg,#ffe7ec_0%,#ffd3c6_45%,#f5f5f4_100%)] bg-cover bg-center p-5"
+          style={{ backgroundImage: `linear-gradient(135deg, rgba(255,231,236,0.8) 0%, rgba(255,211,198,0.75) 45%, rgba(245,245,244,0.65) 100%), url(${listing.imageUrl})` }}
+        >
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">Foto referencial</p>
+            <p className="mt-2 max-w-40 text-sm text-zinc-800">{listing.location}</p>
+          </div>
+          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-zinc-700">
+            {listing.tag}
+          </span>
         </div>
-        <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-zinc-700">
-          {listing.tag}
-        </span>
-      </div>
 
-      <div className="flex flex-col gap-4 p-5">
-        <div className="flex items-start justify-between gap-4">
-          <h2 className="text-lg font-semibold text-zinc-950">{listing.title}</h2>
-          <p className="text-sm font-semibold text-zinc-700">{listing.rating.toFixed(2)}</p>
-        </div>
+        <div className="flex flex-col gap-4 p-5">
+          <div className="flex items-start justify-between gap-4">
+            <h2 className="text-lg font-semibold text-zinc-950">{listing.title}</h2>
+            <p className="text-sm font-semibold text-zinc-700">{listing.rating.toFixed(2)}</p>
+          </div>
 
-        <div className="flex items-center justify-between gap-4">
-          <p className="text-xl font-semibold text-zinc-950">
-            US${listing.pricePerNight}
-            <span className="text-sm font-normal text-zinc-500"> / noche</span>
-          </p>
-          <RatingStars rating={listing.rating} />
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-xl font-semibold text-zinc-950">
+              US${listing.pricePerNight}
+              <span className="text-sm font-normal text-zinc-500"> / noche</span>
+            </p>
+            <RatingStars rating={listing.rating} />
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </Link>
   );
 }

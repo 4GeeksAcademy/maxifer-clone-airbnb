@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 import { ListingCard } from "@/components/listing-card";
@@ -86,6 +87,14 @@ export function CatalogPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f7] px-4 py-6 text-zinc-950 sm:px-6 lg:px-8">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">
+        <nav aria-label="Navegación principal" className="flex items-center gap-2 text-sm text-zinc-500">
+          <Link href="/" className="font-medium text-zinc-700 transition hover:text-zinc-950">
+            Inicio
+          </Link>
+          <span aria-hidden="true">/</span>
+          <span className="text-zinc-500">Catálogo</span>
+        </nav>
+
         <section className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm sm:p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>

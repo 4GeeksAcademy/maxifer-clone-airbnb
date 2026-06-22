@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { ListingCard } from "@/components/listing-card";
 import type { ListingCardData } from "@/types/home";
@@ -276,7 +276,6 @@ function UserIcon() {
 }
 
 export function HomePage() {
-  const router = useRouter();
   const [searchText, setSearchText] = useState("");
   const [activeCategory, setActiveCategory] = useState(categories[0]?.id ?? "explora");
   const [listings, setListings] = useState<ListingCardData[]>([]);
@@ -295,15 +294,10 @@ export function HomePage() {
     setSearchText(value);
   };
 
-  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const normalizedSearch = searchText.trim();
-    const query = normalizedSearch ? `?search=${encodeURIComponent(normalizedSearch)}` : "";
-    router.push(`/catalog${query}`);
-  };
-
   const normalizedSearch = searchText.trim().toLowerCase();
+  const catalogHref = normalizedSearch
+    ? `/catalog?search=${encodeURIComponent(searchText.trim())}`
+    : "/catalog";
   const visibleListings = listings.filter((listing) => {
     const matchesCategory = activeCategory === "explora" || listing.categoryId === activeCategory;
     const searchableText = `${listing.title} ${listing.location} ${listing.tag}`.toLowerCase();
@@ -356,8 +350,7 @@ export function HomePage() {
             </div>
           </div>
 
-          <form
-            onSubmit={handleSearchSubmit}
+          <div
             className="flex w-full items-center gap-3 rounded-full border border-zinc-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-[#ff385c] focus-within:ring-4 focus-within:ring-[#ff385c]/10 lg:mx-auto lg:max-w-xl"
           >
             <SearchIcon />
@@ -369,7 +362,13 @@ export function HomePage() {
               className="w-full bg-transparent text-sm text-zinc-900 outline-none placeholder:text-zinc-400"
               aria-label="Buscar alojamientos"
             />
-          </form>
+            <Link
+              href={catalogHref}
+              className="rounded-full bg-[#ff385c] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#e53054]"
+            >
+              Buscar
+            </Link>
+          </div>
 
           <nav
             aria-label="Filtros por categoría"

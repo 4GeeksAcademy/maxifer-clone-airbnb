@@ -3,40 +3,13 @@ import Link from "next/link";
 
 import type { ListingCardData } from "@/types/home";
 
-const StarIcon = ({ filled }: { filled: boolean }) => {
-  return (
-    <svg
-      aria-hidden="true"
-      className={`h-4 w-4 ${filled ? "text-amber-500" : "text-zinc-300"}`}
-      viewBox="0 0 24 24"
-      fill={filled ? "currentColor" : "none"}
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m12 3.8 2.6 5.4 6 .9-4.3 4.2 1 5.9L12 17.4l-5.3 2.8 1-5.9-4.3-4.2 6-.9L12 3.8Z" />
-    </svg>
-  );
-};
-
-const RatingStars = ({ rating }: { rating: number }) => {
-  const filledStars = Math.round(rating);
-
-  return (
-    <div className="flex items-center gap-1">
-      {Array.from({ length: 5 }, (_, index) => (
-        <StarIcon key={index} filled={index < filledStars} />
-      ))}
-    </div>
-  );
-};
-
 interface ListingCardProps {
   listing: ListingCardData;
 }
 
 export const ListingCard = ({ listing }: ListingCardProps) => {
+  const filledStars = Math.round(listing.rating);
+
   return (
     <Link
       href={`/rooms/${listing.id}`}
@@ -75,7 +48,27 @@ export const ListingCard = ({ listing }: ListingCardProps) => {
               US${listing.pricePerNight}
               <span className="text-sm font-normal text-zinc-500"> / noche</span>
             </p>
-            <RatingStars rating={listing.rating} />
+            <div className="flex items-center gap-1">
+              {Array.from({ length: 5 }, (_, index) => {
+                const isFilled = index < filledStars;
+
+                return (
+                  <svg
+                    key={`rating-star-${listing.id}-${index}`}
+                    aria-hidden="true"
+                    className={`h-4 w-4 ${isFilled ? "text-amber-500" : "text-zinc-300"}`}
+                    viewBox="0 0 24 24"
+                    fill={isFilled ? "currentColor" : "none"}
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m12 3.8 2.6 5.4 6 .9-4.3 4.2 1 5.9L12 17.4l-5.3 2.8 1-5.9-4.3-4.2 6-.9L12 3.8Z" />
+                  </svg>
+                );
+              })}
+            </div>
           </div>
         </div>
       </article>

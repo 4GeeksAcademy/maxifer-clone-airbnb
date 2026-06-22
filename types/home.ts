@@ -20,4 +20,6 @@ export interface ListingCardData {
   rating: number;
   tag: string;
   categoryId: string;
+  latitude?: number;
+  longitude?: number;
 }

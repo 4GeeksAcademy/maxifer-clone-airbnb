@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
@@ -165,7 +166,7 @@ const photoPlaceholders = [
   "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
 ];
 
-export default function RoomDetailPage() {
+const RoomDetailPage = () => {
   const params = useParams<{ id: string }>();
   const roomId = params?.id ?? "";
 
@@ -356,11 +357,12 @@ export default function RoomDetailPage() {
 
         <section className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm">
           <div className="relative aspect-[16/10] w-full bg-zinc-200 sm:aspect-[16/8]">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${activePhoto})` }}
-              role="img"
-              aria-label={`Foto ${currentPhotoIndex + 1} de la habitación ${room.title}`}
+            <Image
+              src={activePhoto}
+              alt={`Foto ${currentPhotoIndex + 1} de la habitación ${room.title}`}
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/45 via-zinc-900/5 to-transparent" />
 
@@ -511,4 +513,6 @@ export default function RoomDetailPage() {
       </article>
     </main>
   );
-}
+};
+
+export default RoomDetailPage;

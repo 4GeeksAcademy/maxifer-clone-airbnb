@@ -1,5 +1,7 @@
 import { CatalogPage } from "@/components/catalog-page";
 
-export default function Catalog() {
+const Catalog = () => {
   return <CatalogPage />;
-}
+};
+
+export default Catalog;

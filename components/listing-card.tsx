@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { ListingCardData } from "@/types/home";
 
-function StarIcon({ filled }: { filled: boolean }) {
+const StarIcon = ({ filled }: { filled: boolean }) => {
   return (
     <svg
       aria-hidden="true"
@@ -17,9 +18,9 @@ function StarIcon({ filled }: { filled: boolean }) {
       <path d="m12 3.8 2.6 5.4 6 .9-4.3 4.2 1 5.9L12 17.4l-5.3 2.8 1-5.9-4.3-4.2 6-.9L12 3.8Z" />
     </svg>
   );
-}
+};
 
-function RatingStars({ rating }: { rating: number }) {
+const RatingStars = ({ rating }: { rating: number }) => {
   const filledStars = Math.round(rating);
 
   return (
@@ -29,13 +30,13 @@ function RatingStars({ rating }: { rating: number }) {
       ))}
     </div>
   );
-}
+};
 
 interface ListingCardProps {
   listing: ListingCardData;
 }
 
-export function ListingCard({ listing }: ListingCardProps) {
+export const ListingCard = ({ listing }: ListingCardProps) => {
   return (
     <Link
       href={`/rooms/${listing.id}`}
@@ -45,8 +46,15 @@ export function ListingCard({ listing }: ListingCardProps) {
       <article className="overflow-hidden rounded-[28px] bg-white shadow-[0_12px_40px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)]">
         <div
           className="relative flex aspect-[4/3] items-end justify-between bg-[linear-gradient(135deg,#ffe7ec_0%,#ffd3c6_45%,#f5f5f4_100%)] bg-cover bg-center p-5"
-          style={{ backgroundImage: `linear-gradient(135deg, rgba(255,231,236,0.8) 0%, rgba(255,211,198,0.75) 45%, rgba(245,245,244,0.65) 100%), url(${listing.imageUrl})` }}
         >
+          <Image
+            src={listing.imageUrl}
+            alt={`Imagen de ${listing.title}`}
+            fill
+            sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,231,236,0.8)_0%,rgba(255,211,198,0.75)_45%,rgba(245,245,244,0.65)_100%)]" />
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">Foto referencial</p>
             <p className="mt-2 max-w-40 text-sm text-zinc-800">{listing.location}</p>
@@ -73,4 +81,4 @@ export function ListingCard({ listing }: ListingCardProps) {
       </article>
     </Link>
   );
-}
+};

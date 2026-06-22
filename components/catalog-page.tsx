@@ -77,7 +77,7 @@ const catalogListings: ListingCardData[] = [
   },
 ];
 
-export function CatalogPage() {
+export const CatalogPage = () => {
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
 
   const sortedResults = [...catalogListings].sort((a, b) =>
@@ -137,4 +137,4 @@ export function CatalogPage() {
       </div>
     </main>
   );
-}
+};

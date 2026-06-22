@@ -275,7 +275,7 @@ function UserIcon() {
   );
 }
 
-export function HomePage() {
+export const HomePage = () => {
   const [searchText, setSearchText] = useState("");
   const [activeCategory, setActiveCategory] = useState(categories[0]?.id ?? "explora");
   const [listings, setListings] = useState<ListingCardData[]>([]);
@@ -450,4 +450,4 @@ export function HomePage() {
       </main>
     </div>
   );
-}
+};

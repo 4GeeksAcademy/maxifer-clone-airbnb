@@ -5,6 +5,8 @@ export const catalogListings: ListingCardData[] = [
     id: "palermo-loft",
     title: "Loft luminoso en Palermo",
     location: "Buenos Aires, Argentina",
+    latitude: -34.5886,
+    longitude: -58.4306,
     imageUrl:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
     pricePerNight: 82,
@@ -16,6 +18,8 @@ export const catalogListings: ListingCardData[] = [
     id: "bariloche-cabin",
     title: "Cabaña con vista al lago",
     location: "Bariloche, Argentina",
+    latitude: -41.1335,
+    longitude: -71.3103,
     imageUrl:
       "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80",
     pricePerNight: 110,
@@ -27,6 +31,8 @@ export const catalogListings: ListingCardData[] = [
     id: "mendoza-house",
     title: "Casa boutique entre viñedos",
     location: "Mendoza, Argentina",
+    latitude: -32.8895,
+    longitude: -68.8458,
     imageUrl:
       "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
     pricePerNight: 96,
@@ -38,6 +44,8 @@ export const catalogListings: ListingCardData[] = [
     id: "miami-studio",
     title: "Studio moderno cerca de la playa",
     location: "Miami, Estados Unidos",
+    latitude: 25.7617,
+    longitude: -80.1918,
     imageUrl:
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
     pricePerNight: 140,
@@ -49,6 +57,8 @@ export const catalogListings: ListingCardData[] = [
     id: "madrid-flat",
     title: "Piso acogedor en Malasaña",
     location: "Madrid, España",
+    latitude: 40.4219,
+    longitude: -3.7033,
     imageUrl:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
     pricePerNight: 118,
@@ -60,6 +70,8 @@ export const catalogListings: ListingCardData[] = [
     id: "tulum-villa",
     title: "Villa tropical con piscina privada",
     location: "Tulum, México",
+    latitude: 20.2114,
+    longitude: -87.4654,
     imageUrl:
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
     pricePerNight: 175,

@@ -285,8 +285,8 @@ export default function RoomDetailPage() {
 
   if (isLoading) {
     return (
-      <main className="min-h-screen bg-[#f7f7f7] px-4 py-8 text-zinc-900 sm:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-5xl flex-col gap-4">
+      <main className="min-h-screen bg-[#f7f7f7] px-4 py-6 text-zinc-900 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
           <nav aria-label="Navegación de retorno" className="flex flex-wrap items-center gap-2 text-sm text-zinc-500">
             <Link href="/" className="font-medium text-zinc-700 transition hover:text-zinc-950">
               Inicio
@@ -312,8 +312,8 @@ export default function RoomDetailPage() {
 
   if (!room) {
     return (
-      <main className="min-h-screen bg-[#f7f7f7] px-4 py-8 text-zinc-900 sm:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-5xl flex-col gap-4">
+      <main className="min-h-screen bg-[#f7f7f7] px-4 py-6 text-zinc-900 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
           <nav aria-label="Navegación de retorno" className="flex flex-wrap items-center gap-2 text-sm text-zinc-500">
             <Link href="/" className="font-medium text-zinc-700 transition hover:text-zinc-950">
               Inicio
@@ -340,8 +340,8 @@ export default function RoomDetailPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f7f7f7] px-4 py-8 text-zinc-900 sm:px-6 lg:px-8">
-      <article className="mx-auto flex w-full max-w-5xl flex-col gap-6">
+    <main className="min-h-screen bg-[#f7f7f7] px-4 py-6 text-zinc-900 sm:px-6 lg:px-8">
+      <article className="mx-auto flex w-full max-w-7xl flex-col gap-6">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-zinc-500">
           <Link href="/" className="font-medium text-zinc-700 transition hover:text-zinc-950">
             Inicio

@@ -1,4 +1,4 @@
-import { CatalogPage } from "@/components/catalog-page";
+import { CatalogPage } from "@/components/features/catalog/CatalogPage";
 
 const Catalog = () => {
   return <CatalogPage />;

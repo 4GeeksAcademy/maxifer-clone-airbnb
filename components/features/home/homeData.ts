@@ -1,4 +1,4 @@
-import type { ListingCardData } from "@/types/home";
+import type { ListingCardData } from "@/types/shared/Listing.types";
 
 export type CategoryItem = {
   id: string;

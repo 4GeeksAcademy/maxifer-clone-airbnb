@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-import type { ListingCardData } from "@/types/home";
+import type { ListingCardData } from "@/types/shared/Listing.types";
 
 interface CatalogMapProps {
   listings: ListingCardData[];

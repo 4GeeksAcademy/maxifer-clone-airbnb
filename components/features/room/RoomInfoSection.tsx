@@ -1,6 +1,6 @@
-import { RoomBookingCard } from "@/components/room-booking-card";
-import { RoomSummary } from "@/components/room-summary";
-import type { RoomDetail } from "@/components/room-detail-data";
+import { RoomBookingCard } from "@/components/features/room/RoomBookingCard";
+import { RoomSummary } from "@/components/features/room/RoomSummary";
+import type { RoomDetail } from "@/components/features/room/roomDetailData";
 
 interface RoomInfoSectionProps {
   room: RoomDetail;

@@ -1,6 +1,6 @@
-import { HomeBrand } from "@/components/home-brand";
-import { HomeSearchBar } from "@/components/home-search-bar";
-import { HomeUserActions } from "@/components/home-user-actions";
+import { HomeBrand } from "@/components/features/home/HomeBrand";
+import { HomeSearchBar } from "@/components/features/home/HomeSearchBar";
+import { HomeUserActions } from "@/components/features/home/HomeUserActions";
 
 interface HomeHeaderProps {
   searchText: string;

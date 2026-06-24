@@ -1,4 +1,4 @@
-import type { AmenityIcon } from "@/components/room-detail-data";
+import type { AmenityIcon } from "@/components/features/room/roomDetailData";
 
 const iconByAmenity: Record<AmenityIcon, React.ReactNode> = {
   wifi: (

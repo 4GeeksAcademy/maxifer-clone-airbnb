@@ -1,5 +1,5 @@
-import type { CategoryItem } from "@/components/home-data";
-import { HomeCategoryIcon } from "@/components/home-category-icons";
+import type { CategoryItem } from "@/components/features/home/homeData";
+import { HomeCategoryIcon } from "@/components/features/home/HomeCategoryIcon";
 
 interface HomeCategoriesNavProps {
   categories: CategoryItem[];

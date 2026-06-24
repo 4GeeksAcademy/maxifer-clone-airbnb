@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import type { ListingCardData } from "@/types/home";
+import type { ListingCardData } from "@/types/shared/Listing.types";
 
 interface ListingCardProps {
   listing: ListingCardData;

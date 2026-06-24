@@ -1,5 +1,5 @@
-import { RoomAmenityIcon } from "@/components/room-amenity-icon";
-import type { RoomDetail } from "@/components/room-detail-data";
+import { RoomAmenityIcon } from "@/components/features/room/RoomAmenityIcon";
+import type { RoomDetail } from "@/components/features/room/roomDetailData";
 
 export const RoomSummary = ({ room }: { room: RoomDetail }) => {
   const filledStars = Math.round(room.rating);

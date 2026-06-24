@@ -2,12 +2,12 @@
 
 import { useParams } from "next/navigation";
 
-import { RoomBreadcrumb } from "@/components/room-breadcrumb";
-import { RoomGallery } from "@/components/room-gallery";
-import { RoomInfoSection } from "@/components/room-info-section";
-import { RoomLoadingView } from "@/components/room-loading-view";
-import { RoomNotFoundView } from "@/components/room-not-found-view";
-import { useRoomDetailState } from "@/components/use-room-detail-state";
+import { RoomBreadcrumb } from "@/components/features/room/RoomBreadcrumb";
+import { RoomGallery } from "@/components/features/room/RoomGallery";
+import { RoomInfoSection } from "@/components/features/room/RoomInfoSection";
+import { RoomLoadingView } from "@/components/features/room/RoomLoadingView";
+import { RoomNotFoundView } from "@/components/features/room/RoomNotFoundView";
+import { useRoomDetailState } from "@/components/features/room/useRoomDetailState";
 
 export const RoomDetailPage = () => {
   const params = useParams<{ id: string }>();

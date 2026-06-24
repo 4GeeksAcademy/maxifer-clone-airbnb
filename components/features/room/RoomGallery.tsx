@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { roomPhotoPlaceholders, type RoomDetail } from "@/components/room-detail-data";
+import { roomPhotoPlaceholders, type RoomDetail } from "@/components/features/room/roomDetailData";
 
 interface RoomGalleryProps {
   room: RoomDetail;

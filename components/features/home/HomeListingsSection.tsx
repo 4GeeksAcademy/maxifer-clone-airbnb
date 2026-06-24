@@ -1,5 +1,5 @@
-import { ListingCard } from "@/components/listing-card";
-import type { ListingCardData } from "@/types/home";
+import { ListingCard } from "@/components/shared/listing/ListingCard";
+import type { ListingCardData } from "@/types/shared/Listing.types";
 
 interface HomeListingsSectionProps {
   isLoading: boolean;

@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 
-import { ListingCard } from "@/components/listing-card";
-import type { ListingCardData } from "@/types/home";
+import { ListingCard } from "@/components/shared/listing/ListingCard";
+import type { ListingCardData } from "@/types/shared/Listing.types";
 
 const CatalogMap = dynamic(
-  () => import("@/components/catalog-map").then((module) => module.CatalogMap),
+  () => import("@/components/features/catalog/CatalogMap").then((module) => module.CatalogMap),
   {
     ssr: false,
     loading: () => (

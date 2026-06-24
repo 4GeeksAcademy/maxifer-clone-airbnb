@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-import { homeCategories, homeListings } from "@/components/home-data";
-import { HomeCategoriesNav } from "@/components/home-categories-nav";
-import { HomeHeader } from "@/components/home-header";
-import { HomeListingsSection } from "@/components/home-listings-section";
-import type { ListingCardData } from "@/types/home";
+import { homeCategories, homeListings } from "@/components/features/home/homeData";
+import { HomeCategoriesNav } from "@/components/features/home/HomeCategoriesNav";
+import { HomeHeader } from "@/components/features/home/HomeHeader";
+import { HomeListingsSection } from "@/components/features/home/HomeListingsSection";
+import type { ListingCardData } from "@/types/shared/Listing.types";
 
 export const HomePage = () => {
   const [searchText, setSearchText] = useState("");

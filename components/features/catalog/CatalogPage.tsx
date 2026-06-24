@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import { catalogListings } from "@/components/catalog-data";
-import { CatalogContent } from "@/components/catalog-content";
-import { CatalogHeader } from "@/components/catalog-header";
+import { catalogListings } from "@/components/features/catalog/catalogData";
+import { CatalogContent } from "@/components/features/catalog/CatalogContent";
+import { CatalogHeader } from "@/components/features/catalog/CatalogHeader";
 
 type SortOrder = "asc" | "desc";
 

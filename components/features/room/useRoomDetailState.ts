@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-import { roomPhotoPlaceholders, roomsById, type RoomDetail } from "@/components/room-detail-data";
+import { roomPhotoPlaceholders, roomsById, type RoomDetail } from "@/components/features/room/roomDetailData";
 
 const normalizeDate = (date: Date) => {
   const normalized = new Date(date);
